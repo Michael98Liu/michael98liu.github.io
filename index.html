@@ -18,13 +18,19 @@
         margin-top: 10px;
     }
     </style>
-    <script src="jQuery.js" type="text/javascript"></script>
+    <script src="jQuery.js" type="text/javacript"></script>
 </head>
 <body>
     <p>First ajax attempt</p>
 
     <script>
         $.get('index.html', function(data){
+            alert(data);
+        })
+
+        $.ajax({
+            url:'index.html'
+        }).done(function(data){
             alert(data);
         })
 
