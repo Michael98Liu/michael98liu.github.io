@@ -24,15 +24,11 @@
     <p>First ajax attempt</p>
 
     <script>
-        $.get('index.html', function(data){
-            alert(data);
-        })
-
         $.ajax({
             url:'index.html'
         }).done(function(data){
-            alert(data);
-        })
+            $('h1').append(data)
+        });
 
     </script>
 
