@@ -18,25 +18,14 @@
         margin-top: 10px;
     }
     </style>
-    <script src="jQuery.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="circle"></div>
+    <p>First ajax attempt</p>
 
-    <script type="text/javascript">
-        if(jQuery){
-            alert('Yes');
-        };
-        $(".circle").click(function(){
-            $(this).animate({width: "300px",
-                            height: "300px",
-                            borderRadius: "300px",
-                        }, 500, function(){
-                            $(this).animate({
-                                marginLeft: "100px",
-                                marginTop: "100px"
-                            }, 500)
-                        });
+    <script>
+        $.get('index.html', function(data){
+            alert(data);
         })
 
     </script>
