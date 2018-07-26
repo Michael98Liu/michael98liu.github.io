@@ -43,9 +43,9 @@ def initialize_corpus(dict_of_post):
 
             date = d['created_at'].split('-')
             date = date[1:]
-            date = '-'.join(date)
+            date = '.'.join(date)
 
-            with open('../_posts/{}-{}-Censord-Wechat-Posts.md'.format(d['created_at'], date), 'a+') as f:
+            with open('../_posts/{}-{}-Censored-Wechat-Posts.md'.format(d['created_at'], date), 'w+') as f:
                 f.write("- [{}]({})\nAuthor: {}\n".format(d['title'], link, d['nickname']))
                 f.close()
 
@@ -66,9 +66,9 @@ def update_corpus(dict_of_post):
 
                 date = d['created_at'].split('-')
                 date = date[1:]
-                date = '-'.join(date)
+                date = '.'.join(date)
 
-                with open('../_posts/{}-{}-Censord-Wechat-Posts.md'.format(d['created_at'], date), 'a+') as f:
+                with open('../_posts/{}-{}-Censored-Wechat-Posts.md'.format(d['created_at'], date), 'a+') as f:
                     f.write("- [{}]({})\nAuthor: {}\n".format(d['title'], link, d['nickname']))
                     f.close()
 
