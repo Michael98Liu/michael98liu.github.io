@@ -20,7 +20,7 @@ layout: default
             {% if post.thumbnail %}
             <img src="{{ post.thumbnail }}" >
             {% endif %}
-            {{ post.content | truncatewords: 100 | split:"<!--more-->" | first }}
+            {{ post.content | split:"<!--more-->" | first }}
             <p class="footnote"><a href="{{ site.baseurl }}{{ post.url }}" class="secondary">Read More&hellip;</a></p>
         </div>
     </article>

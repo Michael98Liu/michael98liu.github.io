@@ -45,7 +45,7 @@ def initialize_corpus(dict_of_post):
             date = date[1:]
             date = '.'.join(date)
 
-            with open('../_posts/{}-{}-Censored-Wechat-Posts.md'.format(d['created_at'], date), 'w+') as f:
+            with open('../_posts/{}-{}-Censored-Wechat-Posts.md'.format(d['created_at'], date), 'a+') as f:
                 f.write("- [{}]({})\nAuthor: {}\n".format(d['title'], link, d['nickname']))
                 f.close()
 
