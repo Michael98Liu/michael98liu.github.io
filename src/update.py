@@ -35,18 +35,19 @@ def initialize_corpus(dict_of_post):
     df = pd.DataFrame()
 
     for d in dict_of_post:
-        #if d['archive'] not in archive_id:
-            # the post not in data set
         df = df.append(d, ignore_index=True)
-        link = "http://wechatscope.jmsc.hku.hk:8000/html?fn={}".format(d['archive'])
 
-        date = d['created_at'].split('-')
-        date = date[1:]
-        date = '-'.join(date)
+        if d['censored_msg'] == "此内容因违规无法查看":
 
-        with open('../_posts/{}-{}-Censord-Wechat-Posts.md'.format(d['created_at'], date), 'a+') as f:
-            f.write("- [{}]({})\nAuthor: {}\n".format(d['title'], link, d['nickname']))
-            f.close()
+            link = "http://wechatscope.jmsc.hku.hk:8000/html?fn={}".format(d['archive'])
+
+            date = d['created_at'].split('-')
+            date = date[1:]
+            date = '-'.join(date)
+
+            with open('../_posts/{}-{}-Censord-Wechat-Posts.md'.format(d['created_at'], date), 'a+') as f:
+                f.write("- [{}]({})\nAuthor: {}\n".format(d['title'], link, d['nickname']))
+                f.close()
 
     df.to_csv('data.csv')
 
@@ -59,15 +60,17 @@ def update_corpus(dict_of_post):
         if d['archive'] not in archive_id:
             # the post not in data set
             df = df.append(d, ignore_index=True)
-            link = "http://wechatscope.jmsc.hku.hk:8000/html?fn={}".format(d['archive'])
 
-            date = d['created_at'].split('-')
-            date = date[1:]
-            date = '-'.join(date)
+            if d['censored_msg'] == "此内容因违规无法查看":
+                link = "http://wechatscope.jmsc.hku.hk:8000/html?fn={}".format(d['archive'])
 
-            with open('../_posts/{}-{}-Censord-Wechat-Posts.md'.format(d['created_at'], date), 'a+') as f:
-                f.write("- [{}]({})\nAuthor: {}\n".format(d['title'], link, d['nickname']))
-                f.close()
+                date = d['created_at'].split('-')
+                date = date[1:]
+                date = '-'.join(date)
+
+                with open('../_posts/{}-{}-Censord-Wechat-Posts.md'.format(d['created_at'], date), 'a+') as f:
+                    f.write("- [{}]({})\nAuthor: {}\n".format(d['title'], link, d['nickname']))
+                    f.close()
 
         df.to_csv('data.csv')
 
