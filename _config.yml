@@ -8,3 +8,5 @@ plugins:
   - jekyll-feed
 
 author: Michael
+
+github: [metadata]
