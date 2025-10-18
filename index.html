@@ -1,41 +1,325 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Redirecting to Fengyuan Liu's homepage!</title>
-        <meta name="description" content="Fengyuan Michael Liu is a third-year Global PhD Fellow studying Computer Science at New York University, advised by Prof. Talal Rahwan and Prof. Bedoor Alshebli. He is based in NYU Abu Dhabi, and affiliated with the Data Science and AI Lab. Using methods from Social Science, Network Science, and Computer Science, he studies various aspects of scientific editors and the publication process of scientific papers. His work has appeared in Nature Human Behaviour and PNAS, as well as being featured in media outlets such as Nature News, Times Higher Education, and AAAS Eureka Alert.">
-        <meta name="author" content="Fengyuan Liu">
-        <meta http-equiv="refresh" content="0; URL=https://uiliu.notion.site/uiliu/Liu-Fengyuan-Michael-10e13762b8294eda8000db4a4252aebb">
-        <link rel="canonical" href="https://uiliu.notion.site/uiliu/Liu-Fengyuan-Michael-10e13762b8294eda8000db4a4252aebb">
-        <meta name="keywords" content="Fengyuan, Michael, Liu, NYUAD, NYU, Computational Social Science, Science of Science, Research, Academic">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Michael Liu — Homepage</title>
+  <link rel="icon" href="https://dof.princeton.edu/sites/g/files/toruqf3496/themes/site/favicon.ico" type="image/vnd.microsoft.icon">
+  <meta name="description" content="Fengyuan Michael Liu — leading expert in the science of science and computational social science" />
+  <style>
+    :root{
+      --maxw: 920px;
+      --accent: #111;
+      --muted: #666;
+      --line:  #e8e8e8;
+      --tag-bg:#f3f3f3;
+    }
+    html { box-sizing: border-box; }
+    *, *:before, *:after { box-sizing: inherit; }
 
-        <style>
-            /* Position text in the middle */
-            .middle {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                text-align: center;
-                font-family: "Courier New", Courier, monospace;
-            }
-        </style>
-    </head>
+    body{
+      margin:0; padding: 48px 16px 80px;
+      background:#fff; color:#111;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      line-height: 1.6; font-size: 18px;
+    }
+    .wrap{ max-width: var(--maxw); margin: 0 auto; }
 
-    <body>
-        <div class="middle">
-            <h1>Welcome to</h1>
-            <h1>Fengyuan "Michael" Liu's homepage!</h1>
+    a{ color: inherit; text-underline-offset: 2px; }
+    a:hover{ text-decoration-thickness: 2px; }
+
+    h1, h2, h3{ margin: 0 0 .5rem; line-height: 1.25; }
+    h1{ font-size: 2.2rem; font-weight: 700; }
+    h2{ font-size: 1.6rem; font-weight: 700; border-top: 1px solid var(--line); padding-top: 28px; margin-top: 40px; }
+    h3{ font-size: 1.15rem; font-weight: 700; }
+    .note{ color: var(--muted); font-style: italic; }
+
+    /* About layout */
+    .about{ display: grid; grid-template-columns: 1fr 2fr; gap: 24px; align-items: start; }
+    .headshot img{ width:100%; height:auto; border-radius:8px; border:1px solid var(--line); object-fit:cover; display:block; }
+    .headshot-desktop{ display:block; }
+    .headshot-mobile{ display:none; }
+
+    .name{ display:flex; align-items: baseline; gap:.5rem; }
+    .name .emoji{ font-size: 1.6rem; }
+    .small{ font-size: .95rem; }
+
+    /* Mobile adjustments */
+    @media (max-width: 640px){
+      .about{ grid-template-columns: 1fr; }
+      .bio-header{ display:flex; align-items:center; gap:12px; margin-bottom:1rem; }
+      .headshot-desktop{ display:none; }
+      .headshot-mobile{ display:block; max-width:100px; flex-shrink:0; }
+      .headshot-mobile img{ width:100px; height:100px; object-fit:cover; border-radius:8px; }
+      h1 {font-size: 1.2rem;}
+      .name .emoji{ font-size: 1.2rem; }
+      .small {font-size: 0.8rem;}
+      body {font-size: 1rem;}
+    }
+
+    .section-title{ display:flex; align-items:center; gap:.6rem; }
+    .section-title .emoji{ font-size: 1.25em; }
+    .divider{ height:1px; background:var(--line); margin: 24px 0; }
+
+    .chips{ display:flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .chip{ padding: 6px 10px; border-radius: 999px; background: var(--tag-bg); border: 1px solid #eee; font-size: .95rem; }
+
+    .pub-list{ list-style: none; padding: 0; margin: 0; }
+    .pub{ padding: 18px 0; border-bottom: 0px solid var(--line); }
+    .pub-title{ font-weight: 700; }
+    .pub-authors{ color: var(--muted); }
+    .pub-meta{ color: var(--muted); font-size: .95rem; }
+    .pub-links{ display:flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; font-size: .95rem; }
+    .pub-links .sep{ color: var(--muted); }
+    .altmetric-badge{ display:inline-flex; align-items:center; gap:.4rem; padding: 2px 8px; border:1px solid var(--line); border-radius: 999px; font-size: .9rem; background:#fafafa; }
+
+    .cols{ display:grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .list{ margin: 0; padding-left: 1.1rem; }
+    @media (max-width: 820px){ .cols{ grid-template-columns: 1fr; } }
+
+    .muted{ color: var(--muted); }
+  </style>
+  <script type='text/javascript' src='https://embed.altmetric.com/assets/embed.js'></script>
+
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- About -->
+    <section id="about">
+      <div class="about">
+        <!-- Left column: large portrait on desktop -->
+        <div>
+          <picture class="headshot headshot-desktop">
+            <source srcset="headshot_long.jpg" media="(min-width: 641px)">
+            <img src="headshot_long.jpg" alt="Headshot of Michael Liu" loading="lazy" />
+          </picture>
         </div>
 
-        <script>
-            $(document).ready(function () {
-            // Handler for .ready() called.
-            window.setTimeout(function () {
-                location.href = "https://www.google.co.in";
-            }, 2000);
-        });
-        </script>
-    </body>
-</html>
+        <!-- Right column: content; on mobile shows headshot next to name -->
+        <div>
+          <div class="name">
+                <h1>Fengyuan "Michael" Liu</h1>
+                <span class="emoji">👋</span>
+            </div>
+          <div class="bio-header">
+            <picture class="headshot headshot-mobile">
+              <source srcset="headshot_square.jpg" media="(max-width: 640px)">
+              <img src="headshot_square.jpg" alt="Headshot of Michael Liu (square)" loading="lazy" />
+            </picture>
+            <div>
+              <p class="note small">Postdoctoral Research Associate @ Princeton University · Princeton, USA</p>
+              <p class="note small"><a href="#">michael.liu [at] princeton.edu</a></p>
+            </div>
+          </div>
 
+          <!-- <h3>About</h3> -->
+          <p>
+            Howdy! I am an incoming <a href='https://www.princeton.edu/news/2025/10/06/fifteen-scholars-named-presidential-postdoctoral-research-fellows'>Presidential Postdoctoral Research Fellow</a> affiliated with the University Center for Human Values at Princeton University. Advised by Prof. Molly Crockett, I am interested in how recent advances in artificial intelligence shape diversity in science. Before joining Princeton, I spent 9 years in Abu Dhabi, where I obtained a Ph.D. in computer science from New York University, supervised by <a href="https://www.trahwan.com/">Prof. Talal Rahwan</a> and <a href="https://bedooralshebli.com/">Prof. Bedoor AlShebli</a>, after obtaining a B.S. in computer science from New York University Abu Dhabi. I was born in Xiangyang and grew up in Wuhan, China.
+          </p>
+
+          <!-- <h3>Research statement</h3> -->
+          <p>
+            At its broadest, my research interrogates <strong>how scientific knowledge is gatekept, and how to redesign those gates</strong>. My dissertation examined gatekeeping in its most visible form (i.e., editors of academic journals). Since then, my work has expanded to include other actors who gatekeep scientific knowledge, including digital technologies (via auditing online platforms and AI tools), science policies (via estimating their causal effect), and ourselves (via studying interaction among scientists). By studying how social institutions and digital technologies shape equitable access to scholarly knowledge, I ask: who controls access? Who is left out? What governance choices expand participation?
+          </p>
+          <p>
+            With a research agenda deeply rooted in <strong>metascience</strong> and <strong>computational social science</strong>, I do not pledge allegiance to any single method. Instead, I triangulate evidence across qualitative, computational, and econometric frameworks. The strength of a multidisciplinary approach lies in producing not just stylized facts, but robust evidence that advances normative debates and informs policy.
+          </p>
+          <p>
+            I have published in <em>Nature Human Behaviour</em> and <em>PNAS</em>. My work was used by the <a href="https://www.oecd.org/en/publications/the-state-of-academic-careers-in-oecd-countries_ea9d3108-en.html">OECD</a> report on the state of academic careers, and featured in <em>The Times</em>, <em>The Guardian</em>, <em>Scientific American</em>, <em>Times Higher Education</em>, <em>Nature</em>, and <em>Science</em>, among many others.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Interests -->
+    <section id="interests">
+      <h2 class="section-title"><span class="emoji">🔎</span><span>Research interests</span></h2>
+      <div class="chips">
+        <span class="chip">Computational Social Science</span>
+        <span class="chip">Science of Science</span>
+        <span class="chip">Sociology of Science</span>
+        <span class="chip">Diversity and Equity</span>
+        <span class="chip">Generative AI</span>
+        <span class="chip">Causal Inference</span>
+      </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+      <h2 class="section-title"><span class="emoji">📄</span><span>Publications</span></h2>
+      <ul class="pub-list">
+        <li class="pub">
+          <div class="pub-title">Citation manipulation through citation mills and pre-print servers</div>
+          <div class="pub-authors">Hazem Ibrahim, <strong>Fengyuan Liu</strong>, Yasir Zaki, and Talal Rahwan</div>
+          <div class="pub-meta"><em>Scientific Reports</em> <strong>15</strong>, 5480 (2025). DOI: <a href="https://doi.org/10.1038/s41598-025-88709-7">10.1038/s41598-025-88709-7</a></div>
+          <div class="pub-links">
+            <a href="https://www.nature.com/articles/s41598-025-88709-7.pdf">Paper</a>
+            <span class="sep">·</span>
+            <div class='altmetric-embed' data-doi="10.1038/s41598-025-88709-7"></div>
+          </div>
+          <div class="pub-links small">
+            <span class="muted">Media:</span>
+            <a href="https://www.nature.com/articles/d41586-024-01672-7">Nature</a>
+            <span class="sep">·</span>
+            <a href="https://www.science.org/content/article/vendor-offering-citations-purchase-latest-bad-actor-scholarly-publishing">Science</a>
+            <span class="sep">·</span>
+            <a href="https://fof.se/artikel/forskare-avslojar-citeringsfusk-pa-google-scholar/">Forskning & Framsteg</a>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-title">Non-White scientists appear on fewer editorial boards, spend more time under review, and receive fewer citations</div>
+          <div class="pub-authors"><strong>Fengyuan Liu</strong>, Talal Rahwan, and Bedoor AlShebli</div>
+          <div class="pub-meta"><em>Proceedings of the National Academy of Sciences (PNAS)</em> <strong>120</strong>(13), e2215324120 (2023). DOI: <a href="https://doi.org/10.1073/pnas.2215324120">10.1073/pnas.2215324120</a></div>
+          <div class="pub-links">
+            <a href="https://www.pnas.org/doi/10.1073/pnas.2215324120">Paper</a>
+            <span class="sep">·</span>
+            <a href="https://doi.org/10.5281/zenodo.7058226">Code</a>
+            <span class="sep">·</span>
+            <div class='altmetric-embed' data-doi="10.1073/pnas.2215324120"></div>
+          </div>
+          <div class="pub-links small">
+            <span class="muted">Media:</span>
+            <a href="https://www.theguardian.com/commentisfree/2025/mar/26/donald-trump-war-on-woke-science-diversity">The Guardian</a>
+            <span class="sep">·</span>
+            <a href="https://www.scientificamerican.com/article/nobel-prizes-overlook-black-scientists-because-of-this-quiet-bias/">Scientific American</a>
+            <span class="sep">·</span>
+            <a href="https://www.nature.com/articles/d41586-023-01457-4">Nature</a>
+            <span class="sep">·</span>
+            <a href="https://physicsworld.com/a/significant-inequalities-affect-non-white-researchers-when-publishing-their-work/">Physics World</a>
+            <span class="sep">·</span>
+            <a href="https://www.universityworldnews.com/post.php?story=2023040410563099">University World News</a>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-title">Gender inequality and self-publication are common among academic editors</div>
+          <div class="pub-authors"><strong>Fengyuan Liu</strong>, Petter Holme, Matteo Chiesa, Bedoor AlShebli, and Talal Rahwan </div>
+          <div class="pub-meta"><em>Nature Human Behaviour</em> <strong>7</strong>, 353–364 (2023). DOI: <a href="https://doi.org/10.1038/s41562-022-01498-1">10.1038/s41562-022-01498-1</a></div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1038/s41562-022-01498-1">Paper</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/Michael98Liu/fair-and-inclusive-scientific-publishing">Code</a>
+            <span class="sep">·</span>
+            <div class='altmetric-embed' data-doi="10.1038/s41562-022-01498-1"></div>
+          </div>
+          <div class="pub-links small">
+            <span class="muted">Media:</span>
+            <a href="https://www.nature.com/articles/d41586-023-00129-7">Nature</a>
+            <span class="sep">·</span>
+            <a href="https://www.nature.com/articles/d41586-023-00200-3">Nature (week’s best science graphics)</a>
+            <span class="sep">·</span>
+            <a href="https://www.universityworldnews.com/post.php?story=20230127144957970">University World News</a>
+            <span class="sep">·</span>
+            <a href="https://www.timeshighereducation.com/news/concern-over-high-self-publication-rates-among-journal-editors">Times Higher Education</a>
+            <span class="sep">·</span>
+            <a href="https://www.newscientist.com/article/2354937-journals-publish-disproportionate-number-of-papers-by-their-editors/">New Scientist</a>
+            <span class="sep">·</span>
+            <a href="http://www.natureasia.com/ja-jp/research/highlight/14353">Nature Asia</a>
+            <span class="sep">·</span>
+            <a href="https://uaetimes.ae/uae-researchers-find-persistent-gender-gap-among-science-editors-news/">UAE Times</a>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-title">Perception, performance, and detectability of conversational artificial intelligence across 32 university courses</div>
+          <div class="pub-authors">Hazem Ibrahim, <strong>Fengyuan Liu</strong>, Rohail Asim, ..., Talal Rahwan, and Yasir Zaki</div>
+          <div class="pub-meta"><em>Scientific Reports</em> <strong>13</strong>, 12187 (2023). DOI: <a href="https://doi.org/10.1038/s41598-023-38964-3">10.1038/s41598-023-38964-3</a></div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1038/s41598-023-38964-3">Paper</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/comnetsAD/ChatGPT">Code</a>
+            <span class="sep">·</span>
+            <div class='altmetric-embed' data-doi="10.1038/s41598-023-38964-3"></div>
+          </div>
+          <div class="pub-links small">
+            <span class="muted">Media:</span>
+            <a href="https://www.thetimes.co.uk/article/ai-detectors-fail-when-texts-are-run-through-online-grammar-tool-xh5cqtxgp">The Times</a>
+            <span class="sep">·</span>
+            <a href="https://www.scientificamerican.com/article/chatgpt-can-get-good-grades-what-should-educators-do-about-it/#">Scientific American</a>
+            <span class="sep">·</span>
+            <a href="https://www.newscientist.com/article/2388789-chatgpt-gets-better-marks-than-students-in-some-university-courses/">New Scientist</a>
+          </div>
+        </li>
+
+        <!-- <li class="pub">
+          <div class="pub-title">Another Paper Title</div>
+          <div class="pub-authors"><strong>Your Name</strong>, B. Collaborator</div>
+          <div class="pub-meta"><em>Conference / Journal</em>, 2024. DOI: <a href="#">10.0000/abc</a></div>
+          <div class="pub-links">
+            <a href="#">Paper</a>
+            <span class="sep">·</span>
+            <a href="#">Code</a>
+            <span class="sep">·</span>
+            <div class='altmetric-embed' data-doi=""></div>
+          </div>
+          <div class="pub-links small">
+            <span class="muted">Media:</span>
+            <a href="#">Press 1</a>
+          </div>
+        </li> -->
+
+      </ul>
+      <!-- <p class="small muted">* Authors in bold indicate advising/mentoring role (optional).</p> -->
+    </section>
+
+    <!-- Pre-prints -->
+    <section id="preprints">
+      <h2 class="section-title"><span class="emoji">📝</span><span>Works in progress</span></h2>
+      <ul class="pub-list">
+        <li class="pub">
+          <div class="pub-title">Current policies governing editorial conflicts of interest are ineffective</div>
+          <div class="pub-authors"><strong>Fengyuan Liu</strong>, Bedoor AlShebli, Talal Rahwan</div>
+          <div class="pub-meta"><em>arXiv preprint </em><a href="https://arxiv.org/abs/2307.00794">arXiv:2307.00794</a> (2025)</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/pdf/2307.00794">Paper (PDF)</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/Michael98Liu/editor-author-association">Code</a>
+          </div>
+        </li>
+
+        <li class="pub">
+          <div class="pub-title">Causal evidence of racial and institutional biases in accessing paywalled articles and scientific data</div>
+          <div class="pub-authors">Hazem Ibrahim, <strong>Fengyuan Liu</strong>, Khalid Mengal, Aaron R. Kaufman, Yasir Zaki, Talal Rahwan</div>
+          <div class="pub-meta"><em>arXiv preprint </em><a href="https://arxiv.org/abs/2509.08299">arXiv:2509.08299</a> (2025)</div>
+          <div class="pub-links">
+            <a href="https://arxiv.org/pdf/2509.08299">Paper (PDF)</a>
+            <span class="sep">·</span>
+            <a href="https://github.com/comnetsAD/bias_academia">Code</a>
+          </div>
+        </li>
+      </ul>
+      <!-- <p class="small muted">* Authors in bold indicate advising/mentoring role (optional).</p> -->
+    </section>
+
+    <!-- Teaching & Service -->
+    <section id="teaching-service">
+      <h2 class="section-title"><span class="emoji">🎓</span><span>Teaching & 🛠️ Service</span></h2>
+      <div class="cols">
+        <div>
+          <h3>Teaching</h3>
+          <ul class="list">
+            <li><em>Teaching Assistant</em>, CS-UH 4001 & CS-UH 4002 - <strong>Capstone Project in Computer Science</strong> - New York University Abu Dhabi (2022-2024)</li>
+            <li><em>Section Leader</em>, CSCI-GA 1170 <strong>Fundamental Algorithms</strong> - New York University (Fall, 2020 and Spring, 2021)</li>
+            <li><em>Guest lecture </em>in CS-UH 2219E <strong>Computational Social Science</strong> - New York University Abu Dhabi (Spring 2023)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Service</h3>
+          <ul class="list">
+            <li><strong>Reviewer</strong>: International Conference for Computational Social Science (IC2S2, 2024 & 2025), <em>Nature Human Behaviour</em> (2023)</li>
+            <li><strong>Sub-reviewer</strong>: <em>Nature</em> (2025), <em>Nature Communications</em> (2025), International Conference on the Science of Science and Innovation (ICSSI, 2023)</li>
+            <li><strong>Committees</strong>: Graduate Student Council, Inclusion, Equity and Action Committee, and Landscape Master Plan Visioning Committee at NYU Abu Dhabi</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="divider"></footer>
+    <footer class="wrap small muted" style="padding-top:16px">
+      <p>Last updated: Oct 2025 · © Fengyuan "Michael" Liu · <a href="#">CV</a> · <a href="https://scholar.google.com/citations?hl=en&user=eWLo5NQAAAAJ">Google Scholar</a> · <a href="https://github.com/michael98liu">GitHub</a></p>
+    </footer>
+  </main>
+</body>
+</html>
